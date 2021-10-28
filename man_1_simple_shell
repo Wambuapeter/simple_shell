@@ -1,0 +1,39 @@
+./" This is a man page for the simple shell we will come up with
+.TH SIMPLE_SHELL "28 October 2021" "simple shell man page"
+
+.SH NAME
+.PP
+ssh
+.PP
+.SH SYNOPSIS
+#include "main.h"
+.PP
+[\fB\-h\fR]
+[\fB\-?\fR]
+[\fB\-\-help\fR]
+[\fB\-v\fR]
+[fB\-\-version\fR]
+.PP
+.SH DESCRIPTION
+.PP
+Simple shell is simple project that reads commands from the standard input and executes them
+.PP
+.SH OPTIONS
+.BR \-h ", " \-? ", " \-\-help
+displays help information
+.PP
+.BR \-v ", " \-\-version
+gives out the version used
+.PP
+.SH BUGS
+There might be many bugs that come up,just notify us
+.PP
+.SH RETURN VALUE
+0 - success
+.PP
+-1 - error
+.PP
+.SH AUTHORS
+Belayneh Getachew
+.PP
+Wambua Peter
