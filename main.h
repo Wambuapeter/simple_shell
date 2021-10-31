@@ -1,3 +1,6 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <stdio.h>
@@ -10,6 +13,17 @@
 #include <string.h>
 
 extern char **environ;
+
+/**
+ * struct builtins - a struct defining builtin commands
+ * @name: it's name
+ * @f: pointer to the commands builtin
+ */
+typedef struct builtins
+{
+	char *name;
+	int (*f)(char **argv, char **input);
+} builtins_t;
 
 char *show_input(void);
 void prompt(void);
@@ -29,4 +43,5 @@ int compareEnv(char *s1, char *s2);
 void execute_proc(char **cmd);
 char **identify_string(char *parameter);
 void controlC(int sig);
+
 #endif
