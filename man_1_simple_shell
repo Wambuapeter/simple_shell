@@ -3,7 +3,7 @@
 
 .SH NAME
 .PP
-ssh
+simple_shell
 .PP
 .SH SYNOPSIS
 #include "main.h"
