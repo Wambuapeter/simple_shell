@@ -35,9 +35,16 @@ typedef struct aliases_s
 	struct aliases_s *next;
 } aliases_t;
 
+typedef struct lists_s
+{
+	char *dirs;
+	struct lists_s *next;
+} lists_t;
+
 char *show_input(void);
 void prompt(void);
 char *_strcat(char *src);
+char *_strcpy(char *dest, const char *src);
 int _strlen(char *str);
 void place(char *str);
 char *findfile(char *command);
@@ -45,7 +52,6 @@ char *find_command(char *command);
 int compare(char *s1, char *s2);
 int _strcmpdir(char *s1, char *s2);
 int charput(char c);
-void place(char *str);
 char *str_concat(char *s1, char *s2);
 int lookforslash(char *cmd);
 int compareExit(char *s1, char *s2);
@@ -56,10 +62,12 @@ void controlC(int sig);
 
 int handle_args(int *exe_ret);
 void free_alias_list(aliases_t *head);
+void free_list(lists_t *head);
 /* some builtin functions */
 char **_copy_env(void);
 void free_env(void);
 char **_get_env(const char *var);
+lists_t *get_path_dir(char *path);
 
 int proc_file_commands(char *file_path, int *retx);
 
